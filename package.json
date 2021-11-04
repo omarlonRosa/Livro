@@ -7,8 +7,15 @@
     "start": "nodemon ulhatravel.js",
     "test": ""
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omarlonRosa/webNodeExpressSite.git"
+  },
+
+
   "author": "Marlon Rosa",
   "license": "ISC",
+  
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4"
