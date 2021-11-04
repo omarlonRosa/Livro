@@ -14,9 +14,11 @@ app.set('view engine', 'handlebars')
 
 app.get('/', (req, res) => res.render('home'))
 
-app.get('/about',(req, res)=>{
-    const randomFortune = fortunes[Math.floor(Math.random()*fortunes.length)]
-    res.render('about',{fortune: randomFortune})})
+const fortune = require('./lib/fortunes')
+
+app.get('/about',(req, res) => {
+    res.render('about', { fortune: fortune.getFortune()})
+    })
 
 //pagina 404 personalizada 
 app.use((req, res)=>{
@@ -30,14 +32,6 @@ app.use((err, req, res, next)=>{
     res.render('500')});
 
 app.use(express.static(__dirname + '/public'))  
-
-const fortunes = [
-    "conquer your fears or they conquer you.",
-    "Rivers need springs.",
-    "Do not fear what don't know.",
-    "you will have a pleasant surprise.",
-    "whenever possible, keep it simple.",
-]
 
 const port = process.env.PORT || 3000
 app.listen(port, ()=>console.log(
