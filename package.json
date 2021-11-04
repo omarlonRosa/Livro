@@ -1,0 +1,19 @@
+{
+  "name": "ulhatravel.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ulhatravel.js",
+  "scripts": {
+    "start": "nodemon ulhatravel.js",
+    "test": ""
+  },
+  "author": "Marlon Rosa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
