@@ -3,8 +3,6 @@ const express = require('express')
 const expressHandlebars= require('express-handlebars')
 const app = express()
 
-
-
 //configura o view engine handlebars
 app.engine('handlebars', expressHandlebars({
     defaultLayout: 'main',
@@ -14,7 +12,7 @@ app.set('view engine', 'handlebars')
 
 app.get('/', (req, res) => res.render('home'))
 
-const fortune = require('./lib/fortunes')
+const fortune = require('./lib/fortunes.js')
 
 app.get('/about',(req, res) => {
     res.render('about', { fortune: fortune.getFortune()})
@@ -30,6 +28,7 @@ app.use((err, req, res, next)=>{
     console.error(err.message)
     res.status(500)
     res.render('500')});
+
 
 app.use(express.static(__dirname + '/public'))  
 
