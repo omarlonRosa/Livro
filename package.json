@@ -5,22 +5,20 @@
   "main": "ulhatravel.js",
   "scripts": {
     "start": "nodemon ulhatravel.js",
-    "test": ""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/omarlonRosa/webNodeExpressSite.git"
   },
-
-
   "author": "Marlon Rosa",
   "license": "ISC",
-  
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4"
   },
   "devDependencies": {
+    "jest": "^27.3.1",
     "nodemon": "^2.0.14"
   }
 }
