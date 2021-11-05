@@ -5,7 +5,8 @@
   "main": "ulhatravel.js",
   "scripts": {
     "start": "nodemon ulhatravel.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ulhatravel.js lib"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,10 @@
     "express-handlebars": "^5.3.4"
   },
   "devDependencies": {
+    "eslint": "^8.1.0",
     "jest": "^27.3.1",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "portfinder": "^1.0.28",
+    "puppeteer": "^11.0.0"
   }
 }

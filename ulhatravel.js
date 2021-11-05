@@ -10,9 +10,11 @@ app.engine('handlebars', expressHandlebars({
 }))
 
 app.set('view engine', 'handlebars')
+
+//const fortune = require('./lib/fortunes.js')
+
 app.get('/', handlers.home)
 
-const fortune = require('./lib/fortunes.js')
 
 app.get('/about', handlers.about)
 
@@ -26,9 +28,12 @@ app.use(handlers.serverError)
 app.use(express.static(__dirname + '/public'))  
 
 const port = process.env.PORT || 3000
-app.listen(port, ()=>console.log(
+if(require.main === module){
+    app.listen(port, ()=>{console.log(
         `Express started on http://localhost:${port}; `
-        + `press Ctrl-C to terminate. `))
+        + `press Ctrl-C to terminate. `)})
+}else{ module.exports = app}
+
     
 
     
